@@ -11,6 +11,8 @@ export const PropsAndState = ({ yourName }) => {
   }
 
   return (
+      // yourName as a paremeter is Props object key
+      //countClick is a variable reset by the setCountClick() and rendered through state change in useState() 
     <>
       <h3>Welcome, {yourName} </h3>
       <p>{countClicks}</p>
