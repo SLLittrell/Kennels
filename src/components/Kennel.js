@@ -1,10 +1,11 @@
 import React from "react"
-import "./Kennel.css"
 import { AnimalCard } from "./animals/AnimalCard"
 import {CustomerCard} from "./custumers/Customer";
-import "./animals/Animal.css"
 import { LocationCard } from "./locations/Location"
 import {EmployeeCard} from "./employees/Employee"
+import { PropsAndState } from "./PropsAndState";
+import "./animals/Animal.css"
+import "./Kennel.css"
 export const Kennel = () => {
 return (
     <>
@@ -15,6 +16,7 @@ return (
             <div>Visit Us at the Nashville North Location</div>
             <div>500 Puppy Way</div>
         </address>
+        <PropsAndState yourName="Stacey" />
         <h2>Animals</h2>
         <article className="animals">
             <AnimalCard />
