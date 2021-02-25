@@ -1,7 +1,10 @@
 import React from "react"
 import "./Kennel.css"
 import { AnimalCard } from "./animals/AnimalCard"
+import {CustomerCard} from "./custumers/Customer";
 import "./animals/Animal.css"
+import { LocationCard } from "./locations/Location"
+import {EmployeeCard} from "./employees/Employee"
 export const Kennel = () => {
 return (
     <>
@@ -17,6 +20,24 @@ return (
             <AnimalCard />
             <AnimalCard />
             <AnimalCard />
+        </article>
+        <h2>Customers</h2>
+        <article className="customers">
+            <CustomerCard />
+            <CustomerCard />
+            <CustomerCard />
+            <CustomerCard />
+        </article>
+        <h2>Locations</h2>
+        <article>
+            <LocationCard />
+            <LocationCard />
+        </article>
+        <h2>Employees</h2>
+        <article className="employees">
+            <EmployeeCard />
+            <EmployeeCard />
+            <EmployeeCard />
         </article>
     </>
 )}
