@@ -6,28 +6,28 @@
             "breed": "Poodle",
             "customerId": 1,
             "locationId": 2
-        }
+        },
         {
             "id": 1,
             "name": "Joey",
             "breed": "Pit bull",
             "customerId": 1,
             "locationId": 2
-        }
+        },
         {
             "id": 1,
             "name": "Chandler",
             "breed": "St. Bernard",
             "customerId": 1,
             "locationId": 2
-        }
+        },
         {
             "id": 1,
             "name": "Monica",
             "breed": "Collie",
             "customerId": 1,
             "locationId": 2
-        }
+        },
         {
             "id": 1,
             "name": "Pheobe",
@@ -41,17 +41,17 @@
             "id": 1,
             "name": "Hannah Hall",
             "address": "7002 Chestnut Ct"
-        }
+        },
         {
             "id": 1,
             "name": "Sally Street",
             "address": "234 Hazelnut Ct"
-        }
+        },
         {
             "id": 1,
             "name": "Mike Morgan",
             "address": "456 Walnut Ct"
-        }
+        },
         {
             "id": 1,
             "name": "Jenna Jumpingjacks",
