@@ -1,13 +1,14 @@
 import React from "react"
 import { Route } from "react-router-dom"
 import { Home } from "./Home"
-import { LocationCard } from "./locations/Location";
-import { EmployeeCard } from "./employees/Employee";
+import { LocationProvider } from "./locations/LocationProvider";
+import { LocationList } from "./locations/LocationList";
 import { CustomerProvider } from "./custumers/CustomerProvider";
 import { CustomerList } from "./custumers/CustomerList";
-import { AnimalProvider } from "./animals/AnimalProvider"
-import { AnimalList } from "./animals/AnimalList"
+import { AnimalProvider } from "./animals/AnimalProvider";
+import { AnimalList } from "./animals/AnimalList";
 import { EmployeeProvider } from "./employees/EmployeeProvider";
+import { EmployeeList } from "./employees/EmployeeList";
 //rerouting to components when nav is clicked
 //Route matched with Link on NavBar
 export const ApplicationViews = () => {
@@ -26,9 +27,11 @@ export const ApplicationViews = () => {
             </AnimalProvider>
 
             {/* Render the animal list when http://localhost:3000/locations */}
-            <Route path="/locations">
-                <LocationCard />
-            </Route>
+            <LocationProvider>
+                <Route path="/locations">
+                    <LocationList />
+                </Route>
+            </LocationProvider>
 
             {/* Render the animal list when http://localhost:3000/customers */}
             <CustomerProvider>
@@ -40,7 +43,7 @@ export const ApplicationViews = () => {
             {/* Render the animal list when http://localhost:3000/employees */}
             <EmployeeProvider>
                 <Route path="/employees">
-                    <EmployeeCard />
+                    <EmployeeList />
                 </Route>
             </EmployeeProvider>
         </>
