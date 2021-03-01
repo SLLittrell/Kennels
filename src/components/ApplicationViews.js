@@ -9,6 +9,7 @@ import { AnimalProvider } from "./animals/AnimalProvider";
 import { AnimalList } from "./animals/AnimalList";
 import { EmployeeProvider } from "./employees/EmployeeProvider";
 import { EmployeeList } from "./employees/EmployeeList";
+import { AnimalForm } from "./animals/AnimalForm";
 //rerouting to components when nav is clicked
 //Route matched with Link on NavBar
 export const ApplicationViews = () => {
@@ -25,6 +26,9 @@ export const ApplicationViews = () => {
                     <CustomerProvider>
                         <Route exact path="/animals">
                             <AnimalList />
+                        </Route>
+                        <Route exact path="/animals/create">
+                            <AnimalForm />
                         </Route>
                     </CustomerProvider>
                 </LocationProvider>
