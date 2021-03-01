@@ -7,8 +7,10 @@ import { CustomerProvider } from "./custumers/CustomerProvider";
 import { CustomerList } from "./custumers/CustomerList";
 import { AnimalProvider } from "./animals/AnimalProvider";
 import { AnimalList } from "./animals/AnimalList";
+import { AnimalForm } from "./animals/AnimalForm";
 import { EmployeeProvider } from "./employees/EmployeeProvider";
 import { EmployeeList } from "./employees/EmployeeList";
+import { EmployeeForm } from "./employees/EmployeeForm";
 //rerouting to components when nav is clicked
 //Route matched with Link on NavBar
 export const ApplicationViews = () => {
@@ -25,6 +27,9 @@ export const ApplicationViews = () => {
                     <CustomerProvider>
                         <Route exact path="/animals">
                             <AnimalList />
+                        </Route>
+                        <Route exact path="/animals/create">
+                            <AnimalForm />
                         </Route>
                     </CustomerProvider>
                 </LocationProvider>
@@ -46,9 +51,14 @@ export const ApplicationViews = () => {
 
             {/* Render the animal list when http://localhost:3000/employees */}
             <EmployeeProvider>
-                <Route path="/employees">
-                    <EmployeeList />
-                </Route>
+                <LocationProvider>
+                    <Route exact path="/employees/create">
+                        <EmployeeForm />
+                    </Route>
+                    <Route exact path="/employees">
+                        <EmployeeList />
+                    </Route>
+                </LocationProvider>
             </EmployeeProvider>
         </>
     )

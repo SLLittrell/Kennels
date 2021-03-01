@@ -1,100 +1,105 @@
 {
-    "animals": [
-        {
-            "id": 1,
-            "name": "Rachel",
-            "breed": "Poodle",
-            "customerId": 1,
-            "locationId": 2
-        },
-        {
-            "id": 2,
-            "name": "Joey",
-            "breed": "Pit bull",
-            "customerId": 3,
-            "locationId": 1
-        },
-        {
-            "id": 3,
-            "name": "Chandler",
-            "breed": "St. Bernard",
-            "customerId": 4,
-            "locationId": 2
-        },
-        {
-            "id": 4,
-            "name": "Monica",
-            "breed": "Collie",
-            "customerId": 2,
-            "locationId": 2
-        },
-        {
-            "id": 5,
-            "name": "Pheobe",
-            "breed": "Lab",
-            "customerId": 5,
-            "locationId": 1
-        }
-    ],
-    "customers": [
-        {
-            "id": 1,
-            "name": "Hannah Hall",
-            "address": "7002 Chestnut Ct"
-        },
-        {
-            "id": 2,
-            "name": "Sally Street",
-            "address": "234 Hazelnut Ct"
-        },
-        {
-            "id": 3,
-            "name": "Mike Morgan",
-            "address": "456 Walnut Ct"
-        },
-        {
-            "id": 4,
-            "name": "Jenna Jumpingjacks",
-            "address": "468 Pecan way"
-        },
-        {
-            "id": 5,
-            "name": "Markey Mark",
-            "address": "468 Pistachio way"
-        }
-    ],
-    "employees": [
-        {
-            "id": 1,
-            "name": "Jeremy Bakker",
-            "locationId": 1
-        },
-        {
-            "id": 2,
-            "name": "Betty Davis",
-            "locationId": 2
-        },
-        {
-            "id": 3,
-            "name": "Billy Holiday",
-            "locationId": 1
-        },
-        {
-            "id": 4,
-            "name": "Louis Armstrong",
-            "locationId": 2
-        }
-    ],
-    "locations":[
+  "animals": [
     {
-        "id": 1,
-        "name": "Nashville North",
-        "address": "8422 Johnson Pike"
+      "id": 1,
+      "name": "Rachel",
+      "breed": "Poodle",
+      "customerId": 1,
+      "locationId": 2
     },
     {
-        "id": 2,
-        "name": "Nashville South",
-        "address": "209 Emory Drive"
+      "id": 2,
+      "name": "Joey",
+      "breed": "Pit bull",
+      "customerId": 3,
+      "locationId": 1
+    },
+    {
+      "id": 3,
+      "name": "Chandler",
+      "breed": "St. Bernard",
+      "customerId": 4,
+      "locationId": 2
+    },
+    {
+      "id": 4,
+      "name": "Monica",
+      "breed": "Collie",
+      "customerId": 2,
+      "locationId": 2
+    },
+    {
+      "id": 5,
+      "name": "Pheobe",
+      "breed": "Lab",
+      "customerId": 5,
+      "locationId": 1
     }
-    ]
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "Hannah Hall",
+      "address": "7002 Chestnut Ct"
+    },
+    {
+      "id": 2,
+      "name": "Sally Street",
+      "address": "234 Hazelnut Ct"
+    },
+    {
+      "id": 3,
+      "name": "Mike Morgan",
+      "address": "456 Walnut Ct"
+    },
+    {
+      "id": 4,
+      "name": "Jenna Jumpingjacks",
+      "address": "468 Pecan way"
+    },
+    {
+      "id": 5,
+      "name": "Markey Mark",
+      "address": "468 Pistachio way"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Jeremy Bakker",
+      "locationId": 1
+    },
+    {
+      "id": 2,
+      "name": "Betty Davis",
+      "locationId": 2
+    },
+    {
+      "id": 3,
+      "name": "Billy Holiday",
+      "locationId": 1
+    },
+    {
+      "id": 4,
+      "name": "Louis Armstrong",
+      "locationId": 2
+    },
+    {
+      "name": "Susan Simmons",
+      "locationId": 1,
+      "id": 5
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Nashville North",
+      "address": "8422 Johnson Pike"
+    },
+    {
+      "id": 2,
+      "name": "Nashville South",
+      "address": "209 Emory Drive"
+    }
+  ]
 }

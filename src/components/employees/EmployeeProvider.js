@@ -14,21 +14,21 @@ export const EmployeeProvider = (props) => {
     }
     // debugger
 
-    // const addCustomer = customerObj => {
-    //     return fetch("http://localhost:8088/customers", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify(customerObj)
-    //     })
-    //     .then(getCustomers)
-    // }
+    const addEmployee = employeeObj => {
+        return fetch("http://localhost:8088/employees", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(employeeObj)
+        })
+        .then(getEmployees)
+    }
 
  
    return (
         <EmployeeContext.Provider value={{
-            employees, getEmployees
+            employees, getEmployees, addEmployee
         }}>
             {props.children}
         </EmployeeContext.Provider>
