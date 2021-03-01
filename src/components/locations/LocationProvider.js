@@ -14,21 +14,21 @@ export const LocationProvider = (props) => {
     }
     // debugger
 
-    // const addCustomer = customerObj => {
-    //     return fetch("http://localhost:8088/customers", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify(customerObj)
-    //     })
-    //     .then(getCustomers)
-    // }
+    const addLocation = locationObj => {
+        return fetch("http://localhost:8088/locations", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(locationObj)
+        })
+        .then(getLocations)
+    }
 
  
    return (
         <LocationContext.Provider value={{
-            locations, getLocations
+            locations, getLocations, addLocation
         }}>
             {props.children}
         </LocationContext.Provider>
