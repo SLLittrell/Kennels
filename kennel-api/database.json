@@ -100,6 +100,11 @@
       "id": 2,
       "name": "Nashville South",
       "address": "209 Emory Drive"
+    },
+    {
+      "name": "Nashville East",
+      "address": "244 Eastway Dr.",
+      "id": 3
     }
   ]
 }
