@@ -14,6 +14,7 @@ export const AnimalForm = () => {
    This allows us to get the value of the input fields later once the save button is clicked.
     */
     const name = useRef(null)
+    const breed = useRef(null)
     const location = useRef(null)
     const customer = useRef(null)
 
@@ -42,6 +43,7 @@ export const AnimalForm = () => {
         //the following properties match with the database
         addAnimal({
             name: name.current.value,
+            breed: breed.current.value,
             locationId,
             customerId
         })
@@ -56,6 +58,12 @@ export const AnimalForm = () => {
               <div className="form-group">
                   <label htmlFor="animalName">Animal name: </label>
                   <input type="text" id="animalName" ref={name} required autoFocus className="form-control" placeholder="Animal name" />
+              </div>
+          </fieldset>
+          <fieldset>
+              <div className="form-group">
+                  <label htmlFor="animalBreed">Animal breed: </label>
+                  <input type="text" id="animalBreed" ref={breed} required className="form-control" placeholder="Animal breed" />
               </div>
           </fieldset>
           <fieldset>
