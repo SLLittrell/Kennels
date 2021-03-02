@@ -38,29 +38,34 @@
   ],
   "customers": [
     {
-      "id": 1,
+      "email": "stacey.littrell@gmail.com",
+      "name": "Stace L",
+      "id": 1
+    },
+    {
+      "email": "1232@yoho.com",
       "name": "Hannah Hall",
-      "address": "7002 Chestnut Ct"
+      "id": 2
     },
     {
-      "id": 2,
-      "name": "Sally Street",
-      "address": "234 Hazelnut Ct"
+      "email": "favdog@bark.com",
+      "name": "Sally  Street",
+      "id": 3
     },
     {
-      "id": 3,
+      "email": "barkbark@dog.com",
       "name": "Mike Morgan",
-      "address": "456 Walnut Ct"
+      "id": 4
     },
     {
-      "id": 4,
-      "name": "Jenna Jumpingjacks",
-      "address": "468 Pecan way"
+      "email": "Jump@bark.com",
+      "name": "Jenna  JumpingJack",
+      "id": 5
     },
     {
-      "id": 5,
+      "email": "mark@bark.com",
       "name": "Markey Mark",
-      "address": "468 Pistachio way"
+      "id": 6
     }
   ],
   "employees": [
