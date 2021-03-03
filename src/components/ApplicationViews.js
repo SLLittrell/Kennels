@@ -4,6 +4,7 @@ import { Home } from "./Home"
 import { LocationProvider } from "./locations/LocationProvider";
 import { LocationList } from "./locations/LocationList";
 import { LocationForm } from "./locations/LocationForm";
+import { LocationDetail } from "./locations/LocationDetail";
 import { CustomerProvider } from "./custumers/CustomerProvider";
 import { CustomerList } from "./custumers/CustomerList";
 import { AnimalProvider } from "./animals/AnimalProvider";
@@ -48,6 +49,9 @@ export const ApplicationViews = () => {
                 </Route>
                 <Route exact path="/locations/create">
                     <LocationForm />
+                </Route>
+                <Route exact path="/locations/detail/:locationId(\d+)">
+                    <LocationDetail />
                 </Route>
             </LocationProvider>
 
