@@ -13,6 +13,7 @@ import { AnimalDetail } from "./animals/AnimalDetail";
 import { EmployeeProvider } from "./employees/EmployeeProvider";
 import { EmployeeList } from "./employees/EmployeeList";
 import { EmployeeForm } from "./employees/EmployeeForm";
+import { EmployeeDetail } from "./employees/EmployeeDetail";
 //rerouting to components when nav is clicked
 //Route matched with Link on NavBar
 export const ApplicationViews = () => {
@@ -65,6 +66,9 @@ export const ApplicationViews = () => {
                     </Route>
                     <Route exact path="/employees">
                         <EmployeeList />
+                    </Route>
+                    <Route exact path="/employees/detail/:employeeId(\d+)">
+                        <EmployeeDetail />
                     </Route>
                 </LocationProvider>
             </EmployeeProvider>
