@@ -66,11 +66,11 @@ export const EmployeeForm = () => {
     }, [])
     return(
         <form className="EmployeeForm">
-          <h2 className="employeeForm__title">New Employee</h2>
+          <h2 className="employeeForm__title">{employeeId ? "Save Employee" : "New Employee"}</h2>
           <fieldset>
               <div className="form-employee">
                   <label htmlFor="employeeName">Name: </label>
-                  <input type="text" id="name" required autoFocus className="emplyeeForm-control" placeholder="Name" 
+                  <input type="text" id="name" required autoFocus className="emplyeeForm-control" placeholder={employees.name} 
                   onChange={handleInputChange}/>
               </div>
           </fieldset>
