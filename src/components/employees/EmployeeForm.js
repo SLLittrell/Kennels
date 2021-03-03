@@ -77,7 +77,7 @@ export const EmployeeForm = () => {
           <fieldset>
               <div className="form-employee">
               <label htmlFor="location">Assign to location: </label>
-                  <select value={employees.locationId} name="locationId" id="employeeLocation" className="form-control" onChange={handleInputChange} >
+                  <select value={employees.locationId} id="locationId" className="form-control" onChange={handleInputChange} >
                       <option value="0">Select a location</option>
                       {locations.map(local => (
                           <option key={local.id} value={local.id}>

@@ -93,6 +93,11 @@
       "name": "Susan Simmons",
       "locationId": 1,
       "id": 5
+    },
+    {
+      "name": "Nat King Cole",
+      "locationId": 1,
+      "id": 6
     }
   ],
   "locations": [
