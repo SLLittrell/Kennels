@@ -14,11 +14,14 @@ export const EmployeeList = () => {
 
     const history = useHistory()
     return (
-    <div className="employees">
-      {
-        employees.map(employee => <EmployeeCard key={employee.id} employee={employee} />)
-      }
-      <button onClick={() => {history.push("/employees/create")}}>New Employee</button>
-    </div> 
+    <>
+    <h2>Employees</h2>
+      <div className="employees">
+        {
+          employees.map(employee => <EmployeeCard key={employee.id} employee={employee} />)
+        }
+        <button onClick={() => {history.push("/employees/create")}}>New Employee</button>
+      </div> 
+    </>
     )
 }

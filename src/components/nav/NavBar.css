@@ -2,9 +2,16 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: left;
+    border-bottom: solid rgb(182, 7, 7);
+    padding-bottom: 10px;
 }
 
 .navbar__item {
     flex-basis: 20%;
     list-style-type: none;
+}
+.navbar__item :hover {
+    background-color: red;
+    color: white;
+    border-radius: 3px;
 }

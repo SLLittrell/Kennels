@@ -4,14 +4,17 @@ import { Home } from "./Home"
 import { LocationProvider } from "./locations/LocationProvider";
 import { LocationList } from "./locations/LocationList";
 import { LocationForm } from "./locations/LocationForm";
+import { LocationDetail } from "./locations/LocationDetail";
 import { CustomerProvider } from "./custumers/CustomerProvider";
 import { CustomerList } from "./custumers/CustomerList";
 import { AnimalProvider } from "./animals/AnimalProvider";
 import { AnimalList } from "./animals/AnimalList";
 import { AnimalForm } from "./animals/AnimalForm";
+import { AnimalDetail } from "./animals/AnimalDetail";
 import { EmployeeProvider } from "./employees/EmployeeProvider";
 import { EmployeeList } from "./employees/EmployeeList";
 import { EmployeeForm } from "./employees/EmployeeForm";
+import { EmployeeDetail } from "./employees/EmployeeDetail";
 //rerouting to components when nav is clicked
 //Route matched with Link on NavBar
 export const ApplicationViews = () => {
@@ -32,6 +35,9 @@ export const ApplicationViews = () => {
                         <Route exact path="/animals/create">
                             <AnimalForm />
                         </Route>
+                        <Route exact path="/animals/detail/:animalId(\d+)">
+                            <AnimalDetail />
+                        </Route>
                     </CustomerProvider>
                 </LocationProvider>
             </AnimalProvider>
@@ -43,6 +49,9 @@ export const ApplicationViews = () => {
                 </Route>
                 <Route exact path="/locations/create">
                     <LocationForm />
+                </Route>
+                <Route exact path="/locations/detail/:locationId(\d+)">
+                    <LocationDetail />
                 </Route>
             </LocationProvider>
 
@@ -61,6 +70,9 @@ export const ApplicationViews = () => {
                     </Route>
                     <Route exact path="/employees">
                         <EmployeeList />
+                    </Route>
+                    <Route exact path="/employees/detail/:employeeId(\d+)">
+                        <EmployeeDetail />
                     </Route>
                 </LocationProvider>
             </EmployeeProvider>
