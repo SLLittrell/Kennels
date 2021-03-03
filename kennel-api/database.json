@@ -3,16 +3,16 @@
     {
       "id": 1,
       "name": "Rachel",
-      "breed": "Poodle",
-      "customerId": 1,
-      "locationId": 2
+      "breed": "Goldendoodle",
+      "locationId": 2,
+      "customerId": 1
     },
     {
       "id": 2,
       "name": "Joey",
-      "breed": "Pit bull",
-      "customerId": 3,
-      "locationId": 1
+      "breed": "bull dog",
+      "locationId": 1,
+      "customerId": 3
     },
     {
       "id": 3,
