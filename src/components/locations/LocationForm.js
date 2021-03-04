@@ -10,7 +10,7 @@ import "./Locations.css"
 5.
 */
 export const LocationForm = () => {
-    const {addLocation, updateLocation, getLocationById} = useContext(LocationContext)
+    const {locations, getLocations, getLocationsById, addLocation, updateLocation} = useContext(LocationContext)
 
     const [location, setLocations] = useState({
         name: "",
@@ -54,33 +54,35 @@ export const LocationForm = () => {
             }
         }
     }
-    // useEffect(() => {
-    //     getLocations()
-    //         .then(() => {
-    //             if (locationId){
-    //                 getLocationById(locationId)
-    //                 .then(local => {
-    //                     setLocations(local)
-    //                     setIsLoading(false)
-    //                 })
-    //             }else{
-    //                 setIsLoading(false)
-    //             }
-    //         })
-    // }, [])
+    useEffect(() => {
+        getLocations()
+            .then(() => {
+                if (locationId){
+                    getLocationsById(locationId)
+                    .then(local => {
+                        setLocations(local)
+                        setIsLoading(false)
+                    })
+                }else{
+                    setIsLoading(false)
+                }
+            })
+    }, [])
     return(
         <form className="locationForm">
-        <h2>New Location</h2>
+        <h2> {locationId ? "Update Location" : "New Location"}</h2>
         <fieldset>
             <div className = "locationform-group">
                 <label htmlFor="locationName">Location name: </label>
-                <input type="text" id="location" required autoFocus className="location-form-control" placeholder="Location Name" />
+                <input type="text" id="location" required autoFocus className="location-form-control" placeholder={location.name}
+                 onChange={handleInputChange} />
             </div>
         </fieldset>
         <fieldset>
             <div className = "locationform-group">
-                <label htmlFor="locationAddress">Location name: </label>
-                <input type="text" id="address"  required autoFocus className="location-form-control" placeholder="Location Address" />
+                <label htmlFor="locationAddress">Location Address: </label>
+                <input type="text" id="address"  required className="location-form-control" placeholder={location.address} 
+                 onChange={handleInputChange}/>
             </div>
         </fieldset>
           <button className="btn btn-primary"

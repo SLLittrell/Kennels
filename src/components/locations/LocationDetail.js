@@ -26,6 +26,8 @@ export const LocationDetail = () => {
       <div className="location__employees">{location.employees?.map(names => names.name).join(", ")}</div>
       <h3>Current Residents</h3>
       <div className="location__resident">{location.animals?.map(aniname => aniname.name).join(", ")}</div>
+      <button className="location__edit" onClick={() => {
+          history.push(`/locations/edit/${location.id}`)}}>Edit</button>
     </section>
   )
 }
