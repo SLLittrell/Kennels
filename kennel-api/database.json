@@ -3,16 +3,16 @@
     {
       "id": 1,
       "name": "Rachel",
-      "breed": "Poodle",
-      "customerId": 1,
-      "locationId": 2
+      "breed": "Goldendoodle",
+      "locationId": 2,
+      "customerId": 3
     },
     {
       "id": 2,
       "name": "Joey",
-      "breed": "Pit bull",
-      "customerId": 3,
-      "locationId": 1
+      "breed": "bull dog",
+      "locationId": 1,
+      "customerId": 3
     },
     {
       "id": 3,
@@ -82,7 +82,7 @@
     {
       "id": 3,
       "name": "Billy Holiday",
-      "locationId": 1
+      "locationId": 2
     },
     {
       "id": 4,
@@ -93,13 +93,18 @@
       "name": "Susan Simmons",
       "locationId": 1,
       "id": 5
+    },
+    {
+      "name": "Nat King Cole",
+      "locationId": 1,
+      "id": 6
     }
   ],
   "locations": [
     {
       "id": 1,
       "name": "Nashville North",
-      "address": "8422 Johnson Pike"
+      "address": "8423 Johnson Pike"
     },
     {
       "id": 2,

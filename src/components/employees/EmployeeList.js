@@ -16,11 +16,11 @@ export const EmployeeList = () => {
     return (
     <>
     <h2>Employees</h2>
+        <button onClick={() => {history.push("/employees/create")}}>New Employee</button>
       <div className="employees">
         {
           employees.map(employee => <EmployeeCard key={employee.id} employee={employee} />)
         }
-        <button onClick={() => {history.push("/employees/create")}}>New Employee</button>
       </div> 
     </>
     )

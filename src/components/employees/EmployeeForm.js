@@ -1,51 +1,83 @@
-import React, { useContext, useRef, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { LocationContext } from "../locations/LocationProvider"
-import "./Employees.css"
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { EmployeeContext } from "./EmployeeProvider";
+import "./Employees.css"
 
 export const EmployeeForm = () => {
-    const {addEmployee} = useContext(EmployeeContext)
+    const {addEmployee, updateEmployee, getEmployeeById} = useContext(EmployeeContext)
     const {locations, getLocations} = useContext(LocationContext)
 
-    const name = useRef(null)
-    const location = useRef(null)
-
+    const [employees, setEmployees] = useState({
+        name: "",
+        locationId: 0
+      })
+    //wait for data before button is active. Look at the button to see how it's setting itself to disabled or not based on this state
+    const [isLoading, setIsLoading] = useState(true)
+    // Now that the form can be used for editing as well as adding an animal, you need access to the animal id for fetching the animal you want to edit
+    const { employeeId }= useParams()
     const history = useHistory()
 
-    useEffect(() => {
-        getLocations()
-    }, [])
 
-    const clickNewEmployee = (event) => {
-        event.preventDefault()
+    const handleInputChange = (event) => {
+        const newEmployee = { ...employees }
+        newEmployee[event.target.id] = event.target.value
+        setEmployees(newEmployee)
+    }
+    
 
-        //get reference to values
-        const locationId = parseInt(location.current.value)
-
-        if (locationId === 0) {
+    const clickSaveEmployee = () => {
+        if (parseInt(employees.locationId) === 0) {
             window.alert("Please select a location")
         }
         else {
-            addEmployee
-            ({name: name.current.value,
-            locationId})
-            .then(() => history.push("/employees"))
+            setIsLoading(true);
+            if (employeeId){
+                //PUT - update
+                updateEmployee({
+                    id: employees.id,
+                    name: employees.name,
+                    locationId: parseInt(employees.locationId),
+                })
+                .then(() => history.push(`/employees/detail/${employees.id}`))
+            }
+            else {
+                addEmployee({
+                    name: employees.name,
+                    locationId: parseInt(employees.locationId),
+                })
+                .then(() => history.push("/employees"))
+            }
         }
     }
+    useEffect(() => {
+        getLocations()
+            .then(() => {
+                if (employeeId){
+                    getEmployeeById(employeeId)
+                    .then(employ => {
+                        setEmployees(employ)
+                        setIsLoading(false)
+                    })
+                }else{
+                    setIsLoading(false)
+                }
+            })
+    }, [])
     return(
         <form className="EmployeeForm">
-          <h2 className="employeeForm__title">New Employee</h2>
+          <h2 className="employeeForm__title">{employeeId ? "Save Employee" : "New Employee"}</h2>
           <fieldset>
               <div className="form-employee">
                   <label htmlFor="employeeName">Name: </label>
-                  <input type="text" id="employeeName" ref={name} required autoFocus className="emplyeeForm-control" placeholder="Name" />
+                  <input type="text" id="name" required autoFocus className="emplyeeForm-control" placeholder={employees.name} 
+                  onChange={handleInputChange}/>
               </div>
           </fieldset>
           <fieldset>
               <div className="form-employee">
               <label htmlFor="location">Assign to location: </label>
-                  <select defaultValue="" name="location" ref={location} id="employeeLocation" className="emplyeeForm-control" >
+                  <select value={employees.locationId} id="locationId" className="form-control" onChange={handleInputChange} >
                       <option value="0">Select a location</option>
                       {locations.map(local => (
                           <option key={local.id} value={local.id}>
@@ -56,8 +88,10 @@ export const EmployeeForm = () => {
               </div>
           </fieldset>
           <button className="btn btn-primary"
-            onClick={clickNewEmployee}>
-            Save Employee
+            disabled={isLoading}
+            onClick={event => { event.preventDefault() 
+            clickSaveEmployee()}}>
+            {employeeId ? "Save Employee" : "New Employee"}
           </button>
         </form>
     )
