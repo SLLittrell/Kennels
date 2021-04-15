@@ -8,13 +8,13 @@ export const EmployeeProvider = (props) => {
 
    
     const getEmployees = () => {
-        return fetch("http://localhost:8088/employees?_expand=location")
+        return fetch("http://localhost:8088/employees")
         .then(res => res.json())
         .then(setEmployees)
     }
     // debugger
     const getEmployeeById = (id) => {
-        return fetch(`http://localhost:8088/employees/${id}?_expand=location`)
+        return fetch(`http://localhost:8088/employees/${id}`)
             .then(res => res.json())
     }
 
