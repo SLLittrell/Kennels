@@ -10,7 +10,8 @@ export const EmployeeForm = () => {
 
     const [employees, setEmployees] = useState({
         name: "",
-        locationId: 0
+        address: "",
+        location_id: 0
       })
     //wait for data before button is active. Look at the button to see how it's setting itself to disabled or not based on this state
     const [isLoading, setIsLoading] = useState(true)
@@ -27,7 +28,7 @@ export const EmployeeForm = () => {
     
 
     const clickSaveEmployee = () => {
-        if (parseInt(employees.locationId) === 0) {
+        if (parseInt(employees.location_id) === 0) {
             window.alert("Please select a location")
         }
         else {
@@ -36,15 +37,17 @@ export const EmployeeForm = () => {
                 //PUT - update
                 updateEmployee({
                     id: employees.id,
+                    address: employees.address,
                     name: employees.name,
-                    locationId: parseInt(employees.locationId),
+                    location_id: parseInt(employees.location_id),
                 })
                 .then(() => history.push(`/employees/detail/${employees.id}`))
             }
             else {
                 addEmployee({
                     name: employees.name,
-                    locationId: parseInt(employees.locationId),
+                    address: employees.address,
+                    location_id: parseInt(employees.location_id),
                 })
                 .then(() => history.push("/employees"))
             }
@@ -76,8 +79,15 @@ export const EmployeeForm = () => {
           </fieldset>
           <fieldset>
               <div className="form-employee">
+                  <label htmlFor="employeeAddress">Address: </label>
+                  <input type="text" id="address" required autoFocus className="employeeForm-control" placeholder={employees.address} 
+                  onChange={handleInputChange}/>
+              </div>
+          </fieldset>
+          <fieldset>
+              <div className="form-employee">
               <label htmlFor="location">Assign to location: </label>
-                  <select value={employees.locationId} id="locationId" className="form-control" onChange={handleInputChange} >
+                  <select value={employees.location_id} id="location_id" className="form-control" onChange={handleInputChange} >
                       <option value="0">Select a location</option>
                       {locations.map(local => (
                           <option key={local.id} value={local.id}>
